@@ -1,7 +1,7 @@
 # blockchain-developer-bootcamp-final-project
 blockchain-developer-bootcamp-final-project
 
-Totem Forrest - A NFT world where you build a world of spirit animals. In tradional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
+Totem Forrest - A NFT platform where you build a world of spirit animals. In tradional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
 
 1 Users can buy existing Sprits or Create their own (following template guidlines)
 
