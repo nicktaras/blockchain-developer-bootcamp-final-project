@@ -1,23 +1,27 @@
 # blockchain-developer-bootcamp-final-project
 blockchain-developer-bootcamp-final-project
 
-NFT Totem
+Totem Forrest - A NFT world where you build a world of spirit animals. In tradional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
 
+1 Users can buy existing Sprits or Create their own (following template guidlines)
 
-1 Users will login to buy NFTs 
+2 NFTs created must fall into a spirit animal from a given list e.g. sea turtle, spider, tree, shark...
 
-2 They will be able to select NFT spirits/animals/entities that resonate with them 
+3 A fraction of the tokens when bought and sold will be banked for supporting that animal in the world
 
-3 The NFT’s build up their Totem (their own spirit) also the spirits they they should protect that exist today
+4 When a spirit has raised X amoont of funds a vote can be made to decide where the funds should go (which cause) by the owners
 
-4 The Creators of the NFT’s can provide benefits to the buyers for supporting them
+5 The NFT's will reside in an actual game where they can be found living. Users will be able control a first person view to navigate the world.
 
-5 To be a creator you must prove you are a worthy charity or act as a creator who must select a charity (where a % can be redeemed for the support given)
+6 stats will be kept of how much money has been raised
+
+7 the NFT's will be designed in such a way that they can feature on OpenSea but contain logic to animate/function in the game
+
+8 ERC1155 will be considered as the token type to enable multi-purchase/multi-sales to reduce the costs for users
 
 
 
 NFT Arcade & Market Place
-
 
 1 Users enter a fun fair of collaborative games
 
