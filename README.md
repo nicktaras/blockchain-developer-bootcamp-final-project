@@ -7,7 +7,7 @@ Totem Forrest - A NFT platform where you help to build a world of spirit animals
 
 2 NFTs created must fall into a spirit animal from a given list e.g. sea turtle, spider, tree, shark...
 
-3 A fraction of the tokens when bought and sold will be banked for supporting that animal in the world
+3 A fraction of the tokens when bought and sold will be banked for supporting that animal in the real world
 
 4 When a spirit has raised X amoont of funds a vote can be made to decide where the funds should go (which cause) by the owners
 
