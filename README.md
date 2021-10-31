@@ -1,6 +1,17 @@
 # blockchain-developer-bootcamp-final-project
 blockchain-developer-bootcamp-final-project
 
+Blockade
+
+An ERC1155 Dapp where users will mint a set of blocks of different colours, but also invisible ones to create a collaborative masterpeice.
+
+- Mint: a selection of blocks with one transaction (series 1 of blockade tokens)
+- Then can next select where their tokens will go on an x,y,z co-ordinate system (off chain part)
+- Transaction: they will then apply a transaction to lock those co-ordinates for 1 hour
+- Transaction: (if co-ords are locked to their address) the user can apply the following transaction to apply the blocks
+
+considerations: https://forum.openzeppelin.com/t/protecting-against-front-running-and-transaction-reordering/1314
+
 Totem Forrest - A social justice token to support what you believe in. In traditional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
 
 1 Users can buy existing Sprits or Create their own (following template guidelines)
