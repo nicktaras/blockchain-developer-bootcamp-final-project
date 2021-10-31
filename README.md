@@ -5,10 +5,9 @@ Blockade
 
 An ERC1155 Dapp where users will mint a set of blocks of different colours, but also invisible ones to create a collaborative masterpeice.
 
-- Mint: a selection of blocks with one transaction (series 1 of blockade tokens)
+- **Mint**: a selection of blocks with one transaction (series 1 of blockade tokens)
 - Then can next select where their tokens will go on an x,y,z co-ordinate system (off chain part)
-- Transaction: they will then apply a transaction to lock those co-ordinates for 1 hour
-- Transaction: (if co-ords are locked to their address) the user can apply the following transaction to apply the blocks
+- **Transaction**: the user can apply the following transaction to apply the blocks (where the their transaction will contain an last transaction increment value to help prevent front running / other methods will be reviewed to help ensure this application can be enjoyed by users, over bots)
 
 considerations: 
 
