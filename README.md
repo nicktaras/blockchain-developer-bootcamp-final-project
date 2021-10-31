@@ -1,7 +1,7 @@
 # blockchain-developer-bootcamp-final-project
 blockchain-developer-bootcamp-final-project
 
-Blockade
+Blockmosphere
 
 An ERC1155 Dapp where users will mint a set of blocks of different colours, but also invisible ones to create a collaborative masterpeice.
 
@@ -10,7 +10,10 @@ An ERC1155 Dapp where users will mint a set of blocks of different colours, but 
 - Transaction: they will then apply a transaction to lock those co-ordinates for 1 hour
 - Transaction: (if co-ords are locked to their address) the user can apply the following transaction to apply the blocks
 
-considerations: https://forum.openzeppelin.com/t/protecting-against-front-running-and-transaction-reordering/1314
+considerations: 
+
+https://docs.openzeppelin.com/contracts/3.x/erc1155
+https://forum.openzeppelin.com/t/protecting-against-front-running-and-transaction-reordering/1314
 
 Totem Forrest - A social justice token to support what you believe in. In traditional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
 
