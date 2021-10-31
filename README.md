@@ -6,8 +6,10 @@ Blockade
 An ERC1155 Dapp where users will mint a set of blocks of different colours, but also invisible ones to create a collaborative masterpeice.
 
 - **Mint**: a selection of blocks with one transaction (series 1 of blockade tokens)
-- Then can next select where their tokens will go on an x,y,z co-ordinate system (off chain part)
+- **Build**: Then can next select where their tokens will go on an x,y,z co-ordinate system (off chain part)
 - **Transaction**: the user can apply the following transaction to apply the blocks (where the their transaction will contain an last transaction increment value to help prevent front running / other methods will be reviewed to help ensure this application can be enjoyed by users, over bots)
+- **Dapp**: 3D Dapp to show the data and allow users to navigate the creations of each other
+- (Idea): Interoperability between other contracts that wish to add blocks to the Dapp. Where the smart contract can accept a mapping of other smart contracts, where the Dapp will search all to apply the views - like different dimensions...
 
 considerations: 
 
