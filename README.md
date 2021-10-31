@@ -1,7 +1,7 @@
 # blockchain-developer-bootcamp-final-project
 blockchain-developer-bootcamp-final-project
 
-Totem Forrest - A NFT platform where you help to build a world of spirit animals. In traditional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
+Totem Forrest - A social justice token to support what you believe in. In traditional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
 
 1 Users can buy existing Sprits or Create their own (following template guidelines)
 
