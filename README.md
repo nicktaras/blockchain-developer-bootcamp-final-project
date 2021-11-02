@@ -1,7 +1,7 @@
 # blockchain-developer-bootcamp-final-project
 blockchain-developer-bootcamp-final-project
 
-Blockade
+Blockden
 
 An ERC1155 Dapp where users will mint a set of blocks of different colours, but also invisible ones to create a collaborative masterpeice.
 
