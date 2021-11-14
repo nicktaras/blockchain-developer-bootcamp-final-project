@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=J4p1sdo3Rz4
 https://docs.openzeppelin.com/contracts/3.x/erc1155
 https://forum.openzeppelin.com/t/protecting-against-front-running-and-transaction-reordering/1314
 
-Totem Forrest - A social justice token to support what you believe in. In traditional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime.
+Totem Forrest - A social justice token to support what you believe in. In traditional context, a totem is your spirit animal and also an entity that you should protect from harm during your lifetime. The Most Important Scarce Resource is Legitimacy
 
 1 Users can buy existing Sprits or Create their own (following template guidelines)
 
