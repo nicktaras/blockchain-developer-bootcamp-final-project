@@ -5,7 +5,7 @@ BlindDate
 
 An ERC20 Utility Smart Contract / Token. 
 
-That enables people to meet on chain, converse and decide whether to date. 
+That enables people to meet on chain, converse and decide whether to date in real life, in the metaverse or continue looking for a match. 
 
 Please answer the following questions. Does your project:
 
