@@ -7,6 +7,16 @@ An ERC20 Utility Smart Contract / Token.
 
 That enables people to meet on chain, converse and decide whether to date in real life, in the metaverse or continue looking for a match. 
 
+## Setup
+
+- install dependancies `npm i`
+- run react dapp `npm run start`
+- open ganache app
+- deploy smart contract inside local development env `truffle migrate --network development`
+
+
+
+
 Please answer the following questions. Does your project:
 
 1. Follow this naming format: https://github.com/YOUR_GITHUB_USERNAME_HERE/blockchain-developer-bootcamp-final-project? YES/NO
