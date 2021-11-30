@@ -52,7 +52,7 @@ This is used to ensure critical operations can not be used by anyone other than 
 
 Remove self destruct function unless it is required.
 
-### SWC-100 - Function Default Visibility
+#### SWC-100 - Function Default Visibility
 
 - Applied External to all functions that are to be called externally.
 - Applied Private to all functions that are to be called internally only.
