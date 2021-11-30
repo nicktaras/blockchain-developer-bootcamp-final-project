@@ -40,7 +40,8 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts();
     this.setState({ account: accounts[0]});
     console.log('acc', accounts);
-    const networkId = 5777; // TODO await web3.eth.net.getId();
+    const networkId = 3; // ropsten
+    // TODO uncomment for localhost: const networkId = 5777; // TODO await web3.eth.net.getId();
     const networkData = BlindDate.networks[networkId];
     if(networkData){
       const abi = BlindDate.abi;

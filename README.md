@@ -16,7 +16,7 @@ That enables people to meet on chain, converse and decide whether to date in rea
 - `truffle compile --network development` to build contracts (copy the output into /src/build/contracts)
 - deploy smart contract inside local development env `truffle migrate --network development`
 - when making contract changes run: `truffle compile` then `truffle migrate --reset --network development` (move root/contracts folder into REACT src/build/contracts each time)
-- Once the Dapp is running, select create mock profile
+- Once the Dapp is running on localhost 3000, select create mock profile
 - Change your wallet address and create another
 - With 2 addresses, select 'date' which will create a date between the two addresses
 
@@ -26,6 +26,10 @@ run `truffle test`
 ## Project Demo walk through
 
 https://www.youtube.com/watch?v=WHeQudPyhjc&feature=youtu.be
+
+## Deployed to Ropsten
+
+https://ropsten.etherscan.io/address/0xa62985EB8538270F25426962234bb8A0eCA8e0F3
 
 Please answer the following questions. Does your project:
 
@@ -64,4 +68,58 @@ Please answer the following questions. Does your project:
 
 Congratulations on finishing your final project!
 
+Starting migrations...
+======================
+> Network name:    'ropsten'
+> Network id:      3
+> Block gas limit: 8000000 (0x7a1200)
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x60d151a04f89108b12db3f2701a51ff948538bff58896891b94b99fe3eef1ea9
+   > Blocks: 1            Seconds: 13
+   > contract address:    0x7f23805437CA7195DBa6B14342488844a3c2fFBA
+   > block number:        11526531
+   > block timestamp:     1638283817
+   > account:             0x16280eeE823Ba628E9Ef5e2036c253B253fE31Fe
+   > balance:             0.885213288000420409
+   > gas used:            245600 (0x3bf60)
+   > gas price:           2.643494829 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0006492423300024 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0006492423300024 ETH
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'BlindDate'
+   ---------------------
+   > transaction hash:    0x34a6b71258479b169cd36cce9eef18581cd0a9dc366399a092cc9c6bad3389dd
+   > Blocks: 0            Seconds: 21
+   > contract address:    0xa62985EB8538270F25426962234bb8A0eCA8e0F3
+   > block number:        11526533
+   > block timestamp:     1638283855
+   > account:             0x16280eeE823Ba628E9Ef5e2036c253B253fE31Fe
+   > balance:             0.871527263539371216
+   > gas used:            5116200 (0x4e1128)
+   > gas price:           2.651272956 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0135644426974872 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0135644426974872 ETH
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.0142136850274896 ETH
 

@@ -1,3 +1,7 @@
+require('dotenv').config();
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const { API_URL, MNEMONIC } = process.env;
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -41,6 +45,12 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
+    ropsten: {
+      provider: function () {
+        return new HDWalletProvider(MNEMONIC, API_URL)
+      },
+      network_id: 3
+    },
     development: {
       host: "127.0.0.1",
       port: 7545,
