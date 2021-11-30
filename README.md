@@ -20,6 +20,10 @@ That enables people to meet on chain, converse and decide whether to date in rea
 - Change your wallet address and create another
 - With 2 addresses, select 'date' which will create a date between the two addresses
 
+## Network React
+
+See App.js line 43: `const networkId = 3; // ropsten or for localhost use 5777;`
+
 ## Tests
 
 run `truffle test`
