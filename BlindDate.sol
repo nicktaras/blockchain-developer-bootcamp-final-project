@@ -9,10 +9,10 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 contract BlindDate is ERC20, Pausable, AccessControl {
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
-    constructor() ERC20("MyToken", "MTK") {
+    constructor() ERC20("BlindDate", "BDAT") {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(PAUSER_ROLE, msg.sender);
-        _mint(msg.sender, 100000 * 10 ** decimals());
+        _mint(msg.sender, 1000000 * 10 ** decimals());
     }
 
     address public owner = msg.sender;
