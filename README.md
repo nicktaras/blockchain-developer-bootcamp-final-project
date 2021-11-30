@@ -5,8 +5,7 @@ BlindDate
 
 An ERC20 Utility Smart Contract / Token. 
 
-That enables people to meet on chain, converse and decide whether to date in real life, in the metaverse or continue looking for a match. 
-
+That enables people to meet on chain, converse and decide whether to date in real life, in the metaverse or continue looking for a match. The core idea is based around a dating mechanism that encourages people to get to know each other, rather than swipe left/right before they get to know matches. 
 ## Setup (React, Truffle, Ganache)
 
 - inside the root folder
@@ -31,9 +30,23 @@ run `truffle test`
 
 https://www.youtube.com/watch?v=WHeQudPyhjc&feature=youtu.be
 
+## Github Pages
+
+https://nicktaras.github.io/blockchain-developer-bootcamp-final-project/build/
 ## Deployed to Ropsten
 
 https://ropsten.etherscan.io/address/0xa62985EB8538270F25426962234bb8A0eCA8e0F3
+
+## Notes / status of project
+
+During the final stage of development, it became clear that some of the methods worked inside Remix, but not in test deployment (localhost) including; updating and deactiation of profiles.
+
+The messages in a real world product would be encrypted and stored on a service such as IPFS to reduce costs. At this time, these can all be read onchain.
+
+I would have liked to have dug deeper into creating a DAO with this concept, allowing people to vote on if a message is offensive and giving tokens for their time to assist.
+Have a means build governance around roles, benefits and a multi-sig implementation to ensure eth stored in the contract can be used wisely to improve the Dapp.
+
+A reveal methodology to the platform was intended, revealing more about their date as they progress. With supporting Tokenomics to encourage the users to engage with their date - getting to know the other person before the date is over.
 
 Please answer the following questions. Does your project:
 
@@ -52,7 +65,7 @@ Please answer the following questions. Does your project:
 
 5. Have at least five smart contract unit tests that pass? YES
 
-6. Contain a `deployed_address.txt` file which contains the testnet address and network where your contract(s) have been deployed? YES/NO
+6. Contain a `deployed_address.txt` file which contains the testnet address and network where your contract(s) have been deployed? YES
 
 7. Have a frontend interface built with a framework like React or HTML/CSS/JS that:
 --Detects the presence of MetaMask
@@ -61,12 +74,12 @@ Please answer the following questions. Does your project:
 --Allows a user to submit a transaction to update smart contract state
 --Updates the frontend if the transaction is successful or not? YES
 
-8. Hosted on Github Pages, Heroku, Netlify, Fleek, or some other free frontend service that gives users a public interface to your decentralized application? (That address should be in your README.md document) YES/NO
+8. Hosted on Github Pages, Heroku, Netlify, Fleek, or some other free frontend service that gives users a public interface to your decentralized application? (That address should be in your README.md document) YES
 
 9. Have clear instructions for: 
 1) Installing dependencies for your project 
 2) Accessing orâ€”if your project needs a server (not required)â€”running your project
-3) Running your smart contract unit tests and which port a local testnet should be running on. YES/NO
+3) Running your smart contract unit tests and which port a local testnet should be running on. YES
 
 10. A screencast of you walking through your project? YES
 
@@ -77,10 +90,8 @@ Starting migrations...
 > Network name:    'ropsten'
 > Network id:      3
 > Block gas limit: 8000000 (0x7a1200)
-
 1_initial_migration.js
 ======================
-
    Deploying 'Migrations'
    ----------------------
    > transaction hash:    0x60d151a04f89108b12db3f2701a51ff948538bff58896891b94b99fe3eef1ea9
