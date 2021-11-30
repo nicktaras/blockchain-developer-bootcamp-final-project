@@ -54,20 +54,6 @@ contract('BlindDate', (accounts) => {
         const currProfile = await contract.updateProfile('xyz','cyberpunk2030',0,0,'Greece',0,[0, 1, 2, 3, 4]);
         assert.equal(currProfile.receipt.status, true);
       });
-
-      it('should contain no dates', async () => {
-        assert.equal(contract.datesArray.length, 0);
-      });
-      
-      it('should contain 1 date', async () => {
-
-        await contract.addProfile('0x02e3118b168CcfD4Fb11F460cD50E53397E7Ee89', 'xyz','cyberpunk',0,0,'Australia',0,[0, 1, 2, 3, 4]);
-        await contract.addProfile('0xd0758718e62f9D8DC332a8AF5C23fC169afED027', 'abc','punkyCyber',0,0,'Australia',0,[0, 1, 2, 3, 4]);
-
-        // should find the address of second date etc.
-        await contract.addDate("0xd0758718e62f9D8DC332a8AF5C23fC169afED027", 'hi, how are you?');
-        assert.equal(contract.datesArray[0], 0);
-      });
       
       it('reactivates account', async () => {
         const newProfile = await contract.addProfile('0x02e3118b168CcfD4Fb11F460cD50E53397E7Ee89','xyz','cyberpunk2030',0,0,'Greece',0,[0, 1, 2, 3, 4]);

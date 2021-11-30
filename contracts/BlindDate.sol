@@ -1,20 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 // import "@openzeppelin/contracts/security/Pausable.sol";
-import "@openzeppelin/contracts/access/AccessControl.sol";
+// import "@openzeppelin/contracts/access/AccessControl.sol";
 
-// When we add a date in view on the web, we need to know the other persons address.
-// Add Dates details to Date upon creation, so we can track them in UI
-    
-/// @title A blind date application to meet like minded people
-/// @author Nicholas Alexander Taras
-/// @notice You can use this contract to create a decentralised dating experience
-/// @dev this contract is not ready for production use an audit is required.
-// Pausable, AccessControl
+// TODO: Split contract to reduce size and allow for Pausable, Access Control
+// TODO: Encrypt messages between users
+
+// , Pausable, AccessControl
 contract BlindDate is ERC20 {
-    bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+    // bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
     constructor() ERC20("BlindDate", "BDAT") {
         // _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -63,6 +59,10 @@ contract BlindDate is ERC20 {
     }
     modifier haveDatedUser(address datesAddress, uint dateIdCounterIndex) {
         require(true);
+        _;
+    }
+    modifier ownerOrMsgSender(address addr) {
+        require(addr == msg.sender || msg.sender == owner);
         _;
     }
     enum DateStages {
@@ -127,7 +127,18 @@ contract BlindDate is ERC20 {
         nineties
     }
     
+    // this.state.contract.methods.addProfile(
+    //     this.state.address,
+    //     'https://lh3.googleusercontent.com/rRpw4UG8rR7xIxAsxmogLClQjISJ6Xi2l6DtWx1zVVgEJAVIAlSYd3WsMk_a3P25YQMKIv8MqVCRjMdBPmgqh0ubpOZOj2KokkCD=w366',
+    //     'CyberPunk001',
+    //     1,
+    //     1,
+    //     'oz',
+    //     1,
+    //     [0, 1, 2, 3, 4]
+    //   )
     struct Profile {
+        address addr;
         bool active;
         string nftImage;
         string name;
@@ -141,7 +152,7 @@ contract BlindDate is ERC20 {
     }
     
     // can be used to iterate through the mapping for UI
-    uint[] public datesArray;
+    address[] public profilesArray;
     uint public dateIdCounter = 0;
     
     struct Date {
@@ -156,6 +167,8 @@ contract BlindDate is ERC20 {
     event endDateSent(Date date);
     event messageSent(Date date);
     event disputeSent(address userAddress, uint count);
+    event reactivate(address userAddress);
+    event deactivate(address userAddress);
     
     mapping (address => Profile) public Profiles;
     
@@ -178,9 +191,10 @@ contract BlindDate is ERC20 {
         string memory location,
         SexAndPreference preference,
         Values[] memory values
-    ) external valuesLength(values) profileExists() {
+    ) external valuesLength(values) profileExists() ownerOrMsgSender(addr) {
         uint[] memory emptyDateList;
         Profiles[addr] = Profile({
+            addr: addr,
             active: true,
             nftImage: nftImage,
             name: name,
@@ -192,6 +206,7 @@ contract BlindDate is ERC20 {
             disputeCount: 0,
             dates: emptyDateList
         });
+        profilesArray.push(msg.sender);
     }
     
     /// @notice Add a new dating profile
@@ -212,6 +227,7 @@ contract BlindDate is ERC20 {
         Values[] memory values
     ) external valuesLength(values) {
       Profiles[msg.sender] = Profile({
+            addr: msg.sender,
             active: Profiles[msg.sender].active,
             nftImage: nftImage,
             name: name,
@@ -245,11 +261,9 @@ contract BlindDate is ERC20 {
       Dates[dateIdCounter].messagesListSender.push(msg.sender);
       Profiles[msg.sender].dates.push(dateIdCounter);
       Profiles[datesAddress].dates.push(dateIdCounter);
-      datesArray.push(dateIdCounter);
       dateIdCounter++;
       emit dateCreated(Dates[dateIdCounter]);
     }
-        
     /// @notice end a date
     /// @param dateIdCounterIndex index of date to stop
     function endDate(uint dateIdCounterIndex) external isActive() {
@@ -271,23 +285,23 @@ contract BlindDate is ERC20 {
     /// @param userAddress users address
     function lockAccount (address userAddress) private {
         Profiles[userAddress].active = false;
-        // emit event
+        emit deactivate(userAddress);
     }
     /// @notice unlock an account can only be triggered by this smart contract
     /// @param userAddress users address
     function unlockAccount (address userAddress) external isOwner() {
-        Profiles[userAddress].active = false;
-        // emit event
+        Profiles[userAddress].active = true;
+        emit reactivate(userAddress);
     }
     /// @notice user can deactivate their account
     function deactivateAccount () external {
         Profiles[msg.sender].active = false;
-        // emit event
+        emit deactivate(msg.sender);
     }
     /// @notice user can re-activate their account
     function reactivateAccount () external canReactivateAccount(){
         Profiles[msg.sender].active = true;
-        // emit event
+        emit reactivate(msg.sender);
     }
     /// @notice send message to your date
     /// @param dateIndex the index of the date to send the message
@@ -322,19 +336,10 @@ contract BlindDate is ERC20 {
     function getProfile(address profileAddress) external view returns (Profile memory){
         return Profiles[profileAddress];
     }
-    // one blind date token TODO - work out the tokenomics.
-    // joiningFee $1 = dispute return to each person 30% / 3.
-    // 10% goes to platform (use to help protect users / raise awareness).
-    // charity DAO.
-    function joiningFee() external payable {
-       require(msg.value >= 1 ether);
-       // balances[msg.sender] += msg.value;
-    }
-
     /// @notice get all date indexes
     /// @return dates array indexes
-    function getAllDateIndexes () external view returns (uint[] memory){
-        return datesArray;
+    function getAllProfiles () external view returns (address[] memory){
+        return profilesArray;
     }
 
     // function pause() public onlyRole(PAUSER_ROLE) {
@@ -352,5 +357,4 @@ contract BlindDate is ERC20 {
     // {
     //     super._beforeTokenTransfer(from, to, amount);
     // }
-
 }
