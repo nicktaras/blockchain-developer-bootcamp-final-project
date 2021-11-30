@@ -11,11 +11,9 @@ Usage of OpenZeplin libraries.
 
 Implementation added:
 
-Applied External to all functions that are to be called externally.
-
-Applied Private to all functions that are to be called internally only.
-
-Applied Public to all functions that can be called internally or externally.
+- Applied External to all functions that are to be called externally.
+- Applied Private to all functions that are to be called internally only.
+- Applied Public to all functions that can be called internally or externally.
 
 #### Optimizing Gas (Creating more efficient Solidity code) Optimizing Gas
 
@@ -56,8 +54,6 @@ Remove self destruct function unless it is required.
 
 ### SWC-100 - Function Default Visibility
 
-Applied External to all functions that are to be called externally.
-
-Applied Private to all functions that are to be called internally only.
-
-Applied Public to all functions that can be called internally or externally.
+- Applied External to all functions that are to be called externally.
+- Applied Private to all functions that are to be called internally only.
+- Applied Public to all functions that can be called internally or externally.
